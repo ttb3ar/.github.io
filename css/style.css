@@ -127,11 +127,6 @@ html[data-theme="dark"] #translate-random.translation-in-progress {
         color 0.3s ease,
         opacity 0.3s ease;
 }
-/* Style for the button container */
-.button-container {
-    display: flex;
-    gap: 10px; /* Space between buttons */
-}
 
 /* Cybersecurity Dashboard */
 .cyber-dashboard {
@@ -156,4 +151,34 @@ html[data-theme="dark"] #translate-random.translation-in-progress {
 html[data-theme="dark"] .cyber-dashboard {
     background-color: #2c2c2c;
     color: #ffffff;
+}
+
+/* Ensure buttons adapt to screen size */
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    gap: 10px;
+    justify-content: center; /* Center buttons in the container */
+}
+
+/* Prevent button text from being cut off */
+button {
+    max-width: 100%; /* Ensure buttons don't exceed their container width */
+    word-wrap: break-word; /* Break long words if needed */
+    text-align: center; /* Center text in buttons */
+    white-space: nowrap; /* Prevent wrapping for button text */
+    overflow: hidden; /* Prevent overflow of content */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    button {
+        padding: 8px 12px; /* Adjust padding for smaller buttons */
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .button-container {
+        gap: 5px; /* Reduce gap between buttons */
+    }
 }
